@@ -1,0 +1,61 @@
+# demo-docker-django-react-postgres
+# <Youtube: https://www.youtube.com/watch?v=ZV4I9vgCwN0>
+
+# Create venv and active
+python3 -m venv . && source bin/activate
+
+# Set up Django
+ pip install "django<4.3,>=4.2"
+
+# Create & Go to apps folder 
+
+# Start project backend
+django-admin startproject backend
+
+# Go to backend folder & run server
+python manage.py runserver
+
+# Ctr + C to exit
+
+# Add file entrypoint.sh to backend folder
+
+# Using custom commands for starting app
+python manage.py startapp custom_commands
+
+# Create .gitignore
+
+# Create management folder
+# In management folder, create commands folder
+# In commands folder create __init__py & superuser.py
+# Add code for superuser.py
+pip install python-decouple gunicorn
+pip install whitenoise
+pip install psycopg2-binary
+
+# Export dependences to requirements.txt
+pip freeze > requirements.txt
+
+# Update middleware in settings.py 
+
+# Build & up docker compose
+docker compose up --build
+# Down docker compose
+docker compose down
+
+------------------------------------------------------------
+# Create front-end React (stand on folder apps)
+npx create-vite
+
+# Init
+npm i
+
+# Run app (dev)
+npm run dev
+
+# Create Dockerfile in app/docker/frontend
+
+# Init serve
+npm i serve
+
+# Update docker-compose.yaml
+
